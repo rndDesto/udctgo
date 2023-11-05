@@ -19,8 +19,8 @@ type Customer struct {
 }
 
 var customers = []Customer{
-	{1, "John Doe", "Customer", "john@example.com", "123456789", false},
-	{2, "Jane Doe", "Client", "jane@example.com", "987654321", true},
+	{1, "Badu", "Admin", "BaduKrenz@gmail.com", "081377263344", false},
+	{2, "Ani", "Client", "ani99@gmail.com", "081366228844", true},
 }
 
 func getCustomers(w http.ResponseWriter, r *http.Request) {
