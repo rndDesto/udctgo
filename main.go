@@ -23,7 +23,7 @@ var customers = []Customer{
 	{2, "Ani", "Client", "ani99@gmail.com", "081366228844", true},
 }
 
-func getCustomers(w http.ResponseWriter, r *http.Request) {
+func getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(customers)
 }
@@ -125,7 +125,7 @@ func deleteCustomer(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/customers", getCustomers).Methods("GET")
+	r.HandleFunc("/customers", getAllCustomers).Methods("GET")
 	r.HandleFunc("/customers/{id:[0-9]+}", getCustomer).Methods("GET")
 	r.HandleFunc("/customers", addCustomer).Methods("POST")
 	r.HandleFunc("/customers/{id:[0-9]+}", updateCustomer).Methods("PUT")
